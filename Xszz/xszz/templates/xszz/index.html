@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if xszz_list %}
+    <ul>
+        <table>
+        {% for xszz in xszz_list %}
+            <tr>
+            <td><p>{{ xszz.title }}</p></td>
+            <td><a href="{{ xszz.link }}">{{ xszz.link }}</a></td>
+            <td><p>{{ xszz.time }}</p></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </ul>
+{% else %}
+    <p>无</p>
+{% endif %}
+</body>
+</html>
