@@ -9,7 +9,11 @@ class SsdutSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
+        num = 0
         for li in response.xpath('/html/body/div[4]/div/div[2]/div/div/ul/li'):
+            if num > 25:
+                break
+            num = num+1
             item = SsdutItem()
             item['title'] = li.xpath('a/text()').extract()
             item['link'] = li.xpath('a/@href').extract()

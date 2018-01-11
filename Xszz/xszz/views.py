@@ -7,5 +7,7 @@ from .models import xszz
 
 def index(request):
     xszz_list = xszz.objects.all()
+    xszz_tuple = tuple(xszz_list)
+    xszz_list = list(xszz_tuple)
     context = {'xszz_list': xszz_list}
     return render(request, 'xszz/index.html', context)

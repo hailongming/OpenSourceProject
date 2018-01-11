@@ -7,6 +7,21 @@
 import codecs
 import pymysql
 import MySQLdb.cursors
+from scrapy.exceptions import DropItem
+
+
+class DuplicatesPipeline(object):
+
+    def __init__(self):
+        self.title_seen = set()
+
+    def process_item(self, item, spider):
+        if item['title'] in self.title_seen:
+            raise DropItem("Duplicate item found: %s" % item)
+        else:
+            self.title_seen.add(item['title'])
+            return item
+
 
 def dbHandle():
     conn = pymysql.connect(

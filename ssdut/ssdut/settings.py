@@ -65,8 +65,9 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    #'ssdut.pipelines.DuplicatesPipeline': 100,
     'ssdut.pipelines.SsdutPipeline': 300,
-   # 'ssdut.pipelines.MySQLPipeline':300,
+    #'ssdut.pipelines.MySQLPipeline':300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
