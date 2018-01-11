@@ -33,6 +33,8 @@ def dbHandle():
     )
     return conn
 
+
+
 class SsdutPipeline(object):
     times = {'09': 0, '10': 0, '11': 0, '12': 0,'05':0,'06':0,'07':0,'08':0}
     def __init__(self):
@@ -69,6 +71,8 @@ class SsdutPipeline(object):
             SsdutPipeline.times[month] = SsdutPipeline.times[month] + 1
         print "++++++++++++++++++"
         print SsdutPipeline.times
+
+        # 存入数据库
         dbobject = dbHandle()
         cursor = dbobject.cursor()
         sql = 'insert into SSDUT.xszz_xszz(title, link, time) values (%s,%s,%s)'
