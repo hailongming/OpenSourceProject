@@ -34,6 +34,6 @@ plt.xlabel(u'month')
 plt.ylabel(u'number')
 namelist = ['7','8','9','10','11','12']
 numlist = [times['07'],times['08'],times['09'],times['10'],times['11'],times['12']]
-plt.xticks(range(5),namelist)
+plt.xticks(range(6),namelist)
 plt.bar(range(len(numlist)),numlist,)
 plt.show()
