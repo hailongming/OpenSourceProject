@@ -27,7 +27,7 @@ def dbHandle():
     conn = pymysql.connect(
         host = '127.0.0.1',
         user = 'root',
-        password = 'mhl19970220',
+        password = '',
         charset = 'utf8',
         use_unicode = False
     )
